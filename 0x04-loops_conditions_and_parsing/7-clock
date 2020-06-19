@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Prints out 0-60 24 times, representing a clock.
+# As soon as sixty minutes have been hit, the hour
+# count increments.
+
+hours=0
+while [ $hours -le 12 ]
+do
+	echo "Hour: $hours"
+
+	minutes=1
+	while [ $minutes -lt 60 ]
+	do
+		echo $minutes
+		((minutes++))
+	done
+
+	((hours++))
+done

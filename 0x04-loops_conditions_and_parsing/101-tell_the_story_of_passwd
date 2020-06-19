@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Pulls data from Sony servers and prints out
+# Spiderman 5's Storyline
+
+FILE=/etc/passwd
+
+if [ -e $FILE ]; then
+	while IFS= read -r lines
+	do
+		usr="$(cut -d ':' -f1 <<< "$lines")"
+		passwd="$(cut -d ':' -f2 <<< "$lines")"
+		uid="$(cut -d ':' -f3 <<< "$lines")"
+		gid="$(cut -d ':' -f4 <<< "$lines")"
+		uid_info="$(cut -d ':' -f5 <<< "$lines")"
+		home_dir="$(cut -d ':' -f6 <<< "$lines")"
+		cmd="$(cut -d ':' -f7 <<< "$lines")"
+		echo "The user $usr is part of the $gid gang, lives in $home_dir and rides $cmd. $uid's place is protected by the passcode $passwd, more info about the user here: $uid_info"
+	done < $FILE
+fi

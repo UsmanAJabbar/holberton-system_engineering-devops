@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Prints out the contents of the current
+# directory for using a for loop
+
+for contents in *;
+do
+	echo "$contents"
+done

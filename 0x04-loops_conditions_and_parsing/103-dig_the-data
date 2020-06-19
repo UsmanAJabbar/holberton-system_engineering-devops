@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Script that parses through an Apache Log File,
+# extracts and prints the IP address, HTTP Status
+# code, and number of occurences sorted.
+
+awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -nr

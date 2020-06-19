@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Checks if a given file exists
+# and whether or not a file may is
+# empty or regular file
+
+FILE=holbertonschool
+
+# CHECK IF THE FILE EXISTS
+if [ -e "$FILE" ]; then
+	echo "$FILE file exists"
+
+	# CHECK IF THE FILE IS EMPTY
+	if [ -s "$FILE" ]; then
+		echo "$FILE file is not empty"
+	else
+		echo "$FILE file is empty"
+	fi
+
+	# CHECK IF FILE IS A REGULAR FILE
+	if [ -f "$FILE" ]; then
+		echo "$FILE is a regular file"
+	fi
+
+else
+	echo "$FILE file does not exist"
+fi

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Script that takes in an Apache
+# Server Log File and prints out the
+# IP addresses and Status Codes right
+# next to them.
+
+awk '{print $1,$9}' apache-access.log

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Prints out Holberton 10 times. However, by the 9th
+# iteration, it replaces Holberton School with "Hi"
+
+for ((i = 0; i < 10; i++));
+do
+	if [ $i = 8 ]; then
+		echo "Hi"
+	else
+		echo "Holberton School"
+	fi
+done

@@ -2,7 +2,7 @@
 # Prints out "Holberton School" 10 times with
 # the help of the until loop
 
-i=0
+i=1
 
 # Notes: Until i is less than (-lt) 'do' the following
 until [ $i -gt 10 ]

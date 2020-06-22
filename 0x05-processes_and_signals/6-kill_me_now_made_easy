@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Kills a specific PID with the help
+# of pkill, negating the use of kill
+# where a PID was required.
+pkill -f '4-to_infinity_and_beyond'

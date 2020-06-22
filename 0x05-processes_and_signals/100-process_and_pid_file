@@ -2,7 +2,7 @@
 
 # Push the PID to the given location
 sudo touch /var/run/holbertonscript.pid
-echo $$ > /var/run/holbertonscript.pid
+sudo echo $$ > /var/run/holbertonscript.pid
 
 # Setup Trap Definitions
 trap 'echo I hate the kill command && sudo rm -rf /var/run/holbertonscript.pid && exit' SIGTERM

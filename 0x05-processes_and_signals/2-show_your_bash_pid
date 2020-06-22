@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Finds all the PIDs associated with
+# Bash using
+ps -f --forest -C bash

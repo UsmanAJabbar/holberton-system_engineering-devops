@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Finds all the PIDs associated with Bash
 # shellcheck disable=SC2009
-ps -f --forest -C bash
+ps -aux | grep bash

@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
 # Push the PID to the given location
-sudo touch /var/run/holbertonscript.pid
-sudo echo $$ > /var/run/holbertonscript.pid
+FILE="/var/run/holbertonscript.pid"
+sudo touch "$FILE"
+echo $$ > "$FILE"
 
 # Setup Trap Definitions
-trap 'echo I hate the kill command && sudo rm -rf /var/run/holbertonscript.pid && exit' SIGTERM
-trap 'sudo rm -rf /var/run/holbertonscript.pid; exit' SIGQUIT
+trap 'echo I hate the kill command && sudo rm $FILE && exit' SIGTERM
+trap 'sudo rm $FILE && exit' SIGQUIT
 trap "echo Y U no love me?!" SIGINT
 
 i=0

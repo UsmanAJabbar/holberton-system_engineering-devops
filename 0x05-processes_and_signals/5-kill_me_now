@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Finds the program PID and kills the running
+# process accordingly
+kill "$(pgrep -f ./4-to_infinity_and_beyond)"

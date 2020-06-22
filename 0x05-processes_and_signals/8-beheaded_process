@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script kills the parent PID
+# entirely with the help of the pkill
+# program
+pkill -9 -f "7-highlander"

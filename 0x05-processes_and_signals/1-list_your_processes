@@ -3,4 +3,4 @@
 # running processes for all users, incl.
 # those that may not have a TTY, in a
 # user-oriented format
-ps aux | less
+ps --forest aux | less

@@ -5,7 +5,7 @@ FILE=/var/run/holbertonscript.pid
 echo $$ >> "$FILE"
 
 # Setup Trap Definitions
-trap 'echo I hate the kill command && rm -rf /var/run/holbertonscript.pid && exit' SIGTERM SIGQUIT
+trap 'echo I hate the kill command; rm -rf /var/run/holbertonscript.pid; exit' SIGTERM SIGQUIT
 trap "echo Y U no love me?!" SIGINT
 
 

@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 
 # Push the PID to the given location
-echo $$ >> /var/run/holbertonscript.pid
+FILE=/var/run/holbertonscript.pid
+echo $$ >> "$FILE"
+
+# Setup Trap Definitions
+trap 'echo I hate the kill command && rm -rf /var/run/holbertonscript.pid && exit' SIGTERM SIGQUIT
+trap "echo Y U no love me?!" SIGINT
 
 
 i=0
 while [ $i -eq 0 ];
 do
 	echo "To infinity and beyond"
-
-	# Setup Trap Definitions
-	trap 'echo I hate the kill command && rm -rf /var/run/holbertonscript.pid && exit' SIGTERM SIGQUIT
-	trap "echo Y U no love me?!" SIGINT
 done

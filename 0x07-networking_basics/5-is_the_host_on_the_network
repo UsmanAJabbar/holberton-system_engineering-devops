@@ -1,0 +1,6 @@
+#!/bin/bash
+# This script pings a specific port
+# fed by the terminal five times
+# Usage: ./5-is_the_host_on_the_network [IP Address]
+
+ping -c 5 "$1"

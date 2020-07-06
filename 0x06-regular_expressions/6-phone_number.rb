@@ -3,4 +3,4 @@
 # from the source text, which in this case, is
 # being fed by argv/terminal.
 # Finds phone numbers
-puts ARGV[0].scan(/^[0-9]{10}/).join
+puts ARGV[0].scan(/^\d{10}$/).join

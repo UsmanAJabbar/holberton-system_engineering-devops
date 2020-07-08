@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 # This script displays all the listening
-# ports currently open on the device this
-# script's run on.
 netstat -l

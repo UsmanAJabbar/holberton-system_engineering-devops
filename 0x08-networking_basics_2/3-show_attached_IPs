@@ -1,0 +1,4 @@
+#!/bin/bash
+# Reveals all the active IPV4 IPs on the current machine
+
+ifconfig | grep 'inet addr' | awk {'print $2'} | cut -d ":" -f 2

@@ -1,0 +1,3 @@
+#!/bin/bash
+# Ears against the wall
+nc -lk localhost 98

@@ -4,5 +4,6 @@
 sudo apt-get update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
-sudo sed 's/server_name.*/a rewrite ^/redirect_me$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-sudo service nginx start
+sudo echo "Holberton School" > /var/www/html/index.html
+sudo sed 's/^\tserver_name.*/\trewrite ^\/redirect_me$ https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;/' /etc/nginx/sites-available/default > /etc/nginx/sites-available/default
+sudo service nginx restart

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# comment
 
 source_file="$1"
 dest_user="$3"

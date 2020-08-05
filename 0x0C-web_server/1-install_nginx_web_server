@@ -2,7 +2,7 @@
 # Installs nginx and creates a webpage with string "Holberton School"
 
 sudo apt-get update
-sudo apt-get install -y nginx
+sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 
 sudo echo "Holberton School" > /var/www/html/index.html

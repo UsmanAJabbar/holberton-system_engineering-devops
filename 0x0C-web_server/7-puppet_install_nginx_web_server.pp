@@ -13,15 +13,15 @@ package { 'nginx':
 }
 
 file { '/var/www/html/index.html':
-    ensure  => file,
+    ensure  => 'file',
     content => 'Holberton School',
 }
 
-file_line { '/etc/nginx/sites-available/default'
-    line     => 'rewrite ^/redirect_me https://usmanjabbar.com permanent;'',
-    ensure   => present,
-    multiple => true,
-    after    => 'server_name _;'',
+file_line { '/etc/nginx/sites-available/default':
+    ensure   => 'present',
+    multiple => 'true',
+    after    => 'server_name _;',
+    line     => 'rewrite ^/redirect_me https://usmanjabbar.com permanent;',
 }
 
 service { 'nginx':

@@ -26,6 +26,6 @@ file_line { '/etc/nginx/sites-available/default':
     line     => 'rewrite ^/redirect_me https://usmanjabbar.com permanent;',
 }
 
-service { 'nginx':
+service { nginx:
     ensure => running,
 }

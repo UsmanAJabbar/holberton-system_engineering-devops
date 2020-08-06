@@ -7,6 +7,7 @@
 # contains the string Holberton School
 # The redirection must be a "301 Moved Permanently"
 include stdlib
+
 package { 'nginx':
     ensure   => 'installed',
     provider => 'apt',
@@ -20,7 +21,8 @@ file { '/var/www/html/index.html':
 file_line { '/etc/nginx/sites-available/default':
     ensure   => 'present',
     multiple => 'true',
-    after    => 'server_name _;',
+    after    => 'server_name',
+    path     => '/etc/nginx/sites-available/default',
     line     => 'rewrite ^/redirect_me https://usmanjabbar.com permanent;',
 }
 

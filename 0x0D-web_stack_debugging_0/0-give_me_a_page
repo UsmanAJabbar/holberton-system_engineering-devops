@@ -1,1 +1,3 @@
+#!/usr/bin/env bash
+# Restarts the dum dum server
 service apache2 restart

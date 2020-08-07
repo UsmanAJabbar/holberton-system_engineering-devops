@@ -5,9 +5,11 @@ import MySQLdb
 
 #  ----------------   TASK ---------------
 # Write a script that lists all states from the database hbtn_0e_0_usa:
-# Your script should take 3 arguments: mysql username, mysql password and database name (no argument validation needed)
+# Your script should take 3 arguments: mysql username, mysql password
+# and database name (no argument validation needed)
 # You must use the module MySQLdb (import MySQLdb)
-# Your script should connect to a MySQL server running on localhost at port 3306
+# Your script should connect to a MySQL server running on localhost
+# at port 3306
 # Results must be sorted in ascending order by states.id
 # Results must be displayed as they are in the example below
 # Your code should not be executed when imported
@@ -17,12 +19,14 @@ import MySQLdb
 # Our python script is going to be executed with args in this format
 #                       ./0-select_states.py root root hbtn_0e_0_usa
 
-# With the arguments finally in, now's the time to give the args to the MYSQL.connect module
-# -   USAGE: db = MySQLdb.connect(host=MY_HOST, user=MY_USER, passwd=MY_PASS, db=MY_DB)
-# -   Then, execute the ||| cur = db.cursor() ||| module to actually get the script going
+# With the arguments finally in, now's the time to give the args to
+# the MYSQL.connect module
+# -   USAGE: db = MySQLdb.connect(host=MY_HOST,
+#                                 user=MY_USER, passwd=MY_PASS, db=MY_DB)
+# -   Then, execute the ||| cur = db.cursor() ||| module
 # -   Then, enter your SQL commands in the exec module:
 # -                 cur.execute("SQL QUERY")
-# -                 rows = cur.fetchall() - This command pull all the data at once
+# -                 rows = cur.fetchall() - This command pulls all the data
 # -                 and then we would print out the details with a for loop
 # -   Close the connections on the cursor, followed by the database
 

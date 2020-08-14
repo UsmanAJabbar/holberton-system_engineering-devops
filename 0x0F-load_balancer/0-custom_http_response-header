@@ -5,7 +5,7 @@ sudo apt-get update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 sudo echo "Holberton School" > /var/www/html/index.html
-sudo wget --content-on-error usmanjabbar.tech/custom_404.html -P /var/www/html/custom_404.html
+sudo echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
 sudo sed -i '/^\tserver_name.*/a \\trewrite ^\/redirect_me https:\/\/usmanjabbar.com permanent;' /etc/nginx/sites-available/default
 sudo sed -i '/^\tserver_name.*/a \\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /var/www/html/;\n\t\tinternal;\n\t}' /etc/nginx/sites-available/default
 sudo sed -i '/^\tserver_name.*/a \\tadd_header X-Served-By $hostname;' /etc/nginx/sites-available/default

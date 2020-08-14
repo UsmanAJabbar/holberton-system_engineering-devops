@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+
+host1=$(curl -sI 35.196.94.233 | grep X-Served-By | awk '{ print $2 }' | rev | cut -c 2- | rev)
+host2=$(curl -sI 54.160.230.10 | grep X-Served-By | awk '{ print $2 }' | rev | cut -c 2- | rev)
+
+sudo cat >> /etc/haproxy/haproxy.cfg << EOF
+frontend main
+	mode http
+	bind *:80
+	default_backend servers
+
+backend servers
+	balance roundrobin
+	server ${host1} 35.196.94.233:80 check
+	server ${host2} 54.160.230.10:80 check
+
+EOF
+
+echo "ENABLED=1" >> /etc/default/haproxy
+sudo service haproxy restart

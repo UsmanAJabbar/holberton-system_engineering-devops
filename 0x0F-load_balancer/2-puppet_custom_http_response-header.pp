@@ -2,7 +2,7 @@
 # basic files based off the tasks from 0 and 1
 package {'haproxy':
     ensure  => installed,
-    version => '1.8',
+    version => '1.6.3',
 }
 exec {'wget':
     provider => 'shell',

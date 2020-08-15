@@ -1,20 +1,10 @@
 # This configures a custom NGINX server with
 # basic files based off the tasks from 0 and 1
-package { 'nginx':
-    ensure   => 'installed',
-    provider => 'apt'
+package {'haproxy':
+    ensure  => installed,
+    version => '1.8',
 }
-package { 'index.html':
-    ensure  => file,
-    path    => '/var/www/html/index.html',
-    content => 'Holberton School'
-}
-exec { 'Beep Beep Coming through':
-    command  => "sudo sed -i '/^\tserver_name.*/a \\tadd_header X-Served-By $hostname;' /etc/nginx/sites-available/default"
-}
-exec { 'Restart NGINX':
-  command => 'sudo service nginx restart'
-}
-service { 'nginx':
-  ensure   => running
+exec {'wget':
+    provider => 'shell',
+    command  => 'wget https://raw.githubusercontent.com/UsmanGTA/holberton-system_engineering-devops/master/0x0F-load_balancer/1-install_load_balancer && chmod +x 1-install_load_balancer && sudo ./1-install_load_balancer',
 }

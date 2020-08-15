@@ -1,5 +1,4 @@
 # This configures a custom NGINX server with
-# basic files based off the tasks from 0 and 1
 package {'haproxy':
     ensure  => installed,
     version => '1.6.3',

@@ -10,7 +10,10 @@ package { 'index.html':
     content => 'Holberton School'
 }
 exec { 'Beep Beep Coming through':
-    command  => "sed -i '41a \\tadd_header X-Served-By $hostname;' /etc/nginx/sites-available/default"
+    command  => "sed -i '/^\tserver_name.*/a \\tadd_header X-Served-By $hostname;' /etc/nginx/sites-available/default"
+}
+exec { 'Restart NGINX':
+  command => 'sudo service nginx restart'
 }
 service { 'nginx':
   ensure   => running

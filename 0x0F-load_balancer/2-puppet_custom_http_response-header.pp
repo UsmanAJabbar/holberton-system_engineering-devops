@@ -5,13 +5,13 @@ package { 'nginx':
     provider => 'apt'
 }
 package { 'index.html':
-    ensure   => file,
-    path	 => '/var/www/html/index.html',
-    content  => 'Holberton School'
+    ensure  => file,
+    path    => '/var/www/html/index.html',
+    content => 'Holberton School'
 }
 exec { 'Beep Beep Coming through':
-    command  => "sed -i '41a \\tadd_header X-Served-By $hostname;' /etc/nginx/sites-available/default"
+    command  => "sed -i '41a \\tadd_header X-Served-By ${hostname};' /etc/nginx/sites-available/default"
 }
 service { 'nginx':
-	ensure   => running
+  ensure   => running
 }

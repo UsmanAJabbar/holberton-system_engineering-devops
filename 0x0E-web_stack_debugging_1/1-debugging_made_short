@@ -2,3 +2,4 @@
 # Finds all the ports with 8080 and replaces them with 80
 sudo sed -i 's/8080/80/' /etc/nginx/sites-enabled/default
 sudo service nginx restart
+sudo mv /run/nginx.pid /run/backup.pid

@@ -43,11 +43,17 @@ defaults
 frontend main
 	mode http
 	bind *:80
+	reqadd X-Forwarded-Proto:\ http
+	default_backend servers
+
+frontend www-https
 	bind *:443 ssl crt /etc/letsencrypt/live/usmanjabbar.tech/ssl.pem
+	reqadd X-Forwarded-Proto:\ https
+	acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+	use_backend letsencrypt-backend if letsencrypt-acl
 	default_backend servers
 
 backend servers
 	balance roundrobin
 	server gc-1694-web-01-1596494429 35.196.94.233:80 check
 	server 1694-web-02 54.160.230.10:80 check
-

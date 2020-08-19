@@ -41,7 +41,6 @@ defaults
 	option http-server-close
 
 frontend main
-	mode http
 	bind *:80
 	reqadd X-Forwarded-Proto:\ http
 	default_backend servers

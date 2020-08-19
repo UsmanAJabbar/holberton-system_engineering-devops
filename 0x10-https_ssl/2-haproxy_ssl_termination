@@ -46,7 +46,7 @@ frontend main
 	default_backend servers
 
 frontend www-https
-	bind *:443 ssl crt /etc/letsencrypt/live/usmanjabbar.tech/ssl.pem
+	bind *:443 ssl crt /etc/haproxy/certs/usmanjabbar.tech.pem
 	reqadd X-Forwarded-Proto:\ https
 	acl letsencrypt-acl path_beg /.well-known/acme-challenge/
 	use_backend letsencrypt-backend if letsencrypt-acl

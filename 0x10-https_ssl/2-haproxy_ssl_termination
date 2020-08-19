@@ -55,5 +55,9 @@ frontend www-https
 
 backend servers
 	balance roundrobin
+	redirect scheme https if !{ ssl_fc }
 	server gc-1694-web-01-1596494429 35.196.94.233:80 check
 	server 1694-web-02 54.160.230.10:80 check
+
+backend letsencrypt-backend
+   server letsencrypt 127.0.0.1:54321

@@ -11,6 +11,8 @@ global
 	# Default SSL material locations
 	ca-base /etc/ssl/certs
 	crt-base /etc/ssl/private
+	maxconn 2048
+	tune.ssl.default-dh-param 2048
 
 	# Default ciphers to use on SSL-enabled listening sockets.
 	# For more information, see ciphers(1SSL). This list is from:
@@ -35,6 +37,8 @@ defaults
 	errorfile 502 /etc/haproxy/errors/502.http
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
+	option forwardfor
+	option http-server-close
 
 frontend main
 	mode http

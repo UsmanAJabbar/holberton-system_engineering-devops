@@ -1,3 +1,4 @@
 sudo ufw default deny incoming
+sudo ufw default allow outgoing
 sudo ufw allow from any to any port 22,443,80 proto tcp
 sudo ufw enable

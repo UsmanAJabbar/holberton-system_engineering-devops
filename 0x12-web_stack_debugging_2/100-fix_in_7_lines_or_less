@@ -2,6 +2,5 @@
 # Lesson of the day: Always check your error logs
 sudo chmod 0700 /etc/nginx/nginx.conf
 sed -i 's/80/8080/' /etc/nginx/sites-available/default
-sed -i 's/#user www-data;/user nginx;/' /etc/nginx/nginx.conf
 pkill apache2
 sudo -u nginx service nginx restart

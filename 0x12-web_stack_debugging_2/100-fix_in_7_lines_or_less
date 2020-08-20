@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Lesson of the day: Always check your error logs
-sudo chmod 0700 /etc/nginx/nginx.conf
+sudo chmod 0777 /etc/nginx/nginx.conf
 sed -i 's/80/8080/' /etc/nginx/sites-available/default
 pkill apache2
 sudo -u nginx service nginx restart

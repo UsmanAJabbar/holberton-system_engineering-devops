@@ -2,10 +2,11 @@
 """Pulls the necessary data... and thank you for reading this"""
 from requests import get
 from sys import argv
-id, req = int(argv[1]), "https://jsonplaceholder.typicode.com"
 
 
 if __name__ == "__main__":
+    id, req = int(argv[1]), "https://jsonplaceholder.typicode.com"
+
     task_data = get(req + '/todos').json()
     completed_tasks = []
     for data in task_data:

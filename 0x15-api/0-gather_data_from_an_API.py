@@ -17,7 +17,7 @@ if __name__ == "__main__":
     total_tasks = 0
     for data in task_data:
         if data['userId'] == id:
-                total_tasks += 1
+                total += 1
 
     task_data = get(req + '/todos').json()
     comp = 0
@@ -30,6 +30,6 @@ if __name__ == "__main__":
         if data['id'] == id:
             name = data.get('name')
 
-    print("Employee {} is done with tasks({}/{}):".format(name, comp, total_tasks))
+    print("Employee {} is done with tasks({}/{}):".format(name, comp, total))
     for tasks in completed_tasks:
         print('\t {}'.format(tasks))

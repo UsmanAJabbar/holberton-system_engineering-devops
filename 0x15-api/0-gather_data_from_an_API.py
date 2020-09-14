@@ -14,7 +14,7 @@ if __name__ == "__main__":
                 completed_tasks.append(data.get('title'))
 
     task_data = get(req + '/todos').json()
-    total_tasks = 0
+    total = 0
     for data in task_data:
         if data['userId'] == id:
                 total += 1

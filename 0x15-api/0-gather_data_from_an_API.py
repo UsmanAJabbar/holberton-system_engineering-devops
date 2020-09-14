@@ -10,8 +10,8 @@ def name():
     user_data = get(req + '/users').json()
     for data in user_data:
         if data['id'] == id:
-            specific_employee = data
-            return specific_employee['name']
+            specific_employee = data.get('name')
+            return specific_employee
 
 
 def comp_tasks():
@@ -40,7 +40,7 @@ def comp():
     completed_tasks = []
     for data in task_data:
         if data['userId'] == id and data['completed'] is True:
-                completed_tasks.append(data['title'])
+                completed_tasks.append(data.get('title'))
     return completed_tasks
 
 if __name__ == "__main__":

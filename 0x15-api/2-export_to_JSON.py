@@ -12,7 +12,7 @@ if __name__ == "__main__":
     user_data = get(req + '/users').json()
     for data in user_data:
         if data['id'] == id:
-            name = data.get('name')
+            name = data.get('username')
 
     the_dayta = {id: [{'task': task.get('title'),
                        'completed': task.get('completed'),

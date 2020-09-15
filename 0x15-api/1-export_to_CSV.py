@@ -9,7 +9,7 @@ if __name__ == "__main__":
     id, req = int(argv[1]), "https://jsonplaceholder.typicode.com"
 
     # GETS THE TITLE OF COMPLETES TASKS
-    task_data = get(req + '/todos').json()
+    task_data = get(req + '/todos/?userId={}'.format(id)).json()
 
     # GETS THE NAME OF THE USER
     user_data = get(req + '/users').json()

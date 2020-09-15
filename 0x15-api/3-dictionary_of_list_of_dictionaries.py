@@ -28,7 +28,7 @@ if __name__ == "__main__":
         the_dayta = [{'username': fetch_name(all_ids),
                       'task': task.get('title'),
                       'completed': task.get('completed')}
-                      for task in task_data]
+                     for task in task_data]
         final_data.update({all_ids: the_dayta})
 
     filename = 'todo_all_employees.json'

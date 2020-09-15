@@ -15,7 +15,7 @@ if __name__ == "__main__":
     user_data = get(req + '/users').json()
     for data in user_data:
         if data['id'] == id:
-            name = data.get('name')
+            name = data.get('username')
 
     filename = '{}.csv'.format(id)
     with open(filename, mode='w') as file:

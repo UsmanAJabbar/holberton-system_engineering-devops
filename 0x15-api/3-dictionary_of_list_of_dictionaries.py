@@ -15,7 +15,7 @@ if __name__ == "__main__":
         """Fetches the name for each ID"""
         for data in user_data:
             if data['id'] == id:
-                return data.get('name')
+                return data.get('username')
 
     # Gets all the applicable IDs
     id_list = []

@@ -10,11 +10,6 @@ if __name__ == "__main__":
 
     # GETS THE TITLE OF COMPLETES TASKS
     task_data = get(req + '/todos').json()
-    completed_tasks = []
-    for data in task_data:
-        if data['userId'] == id and data['completed'] is True:
-                completed_tasks.append(data.get('title'))
-
 
     # GETS THE NAME OF THE USER
     user_data = get(req + '/users').json()

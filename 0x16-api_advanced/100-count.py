@@ -36,6 +36,6 @@ def count_words(sub, word_list, next="", keys={}):
         if next is not None:
             return count_words(sub, word_list, next, keys)
         else:
-            for k, v in sorted(keys.items()):
+            for k, v in sorted(keys.items(), reverse=True):
                 if v != 0:
                     print(k + ":", v)

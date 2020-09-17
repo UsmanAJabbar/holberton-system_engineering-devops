@@ -28,7 +28,7 @@ def count_words(sub, word_list, next="", keys={}):
     for words in word_list:
         keys[words] = 0 if words not in keys else keys[words]
         for titles in out:
-            if words in titles:
+            if words in titles.split():
                 keys[words] = keys[words] + 1
 
     if out is not None:

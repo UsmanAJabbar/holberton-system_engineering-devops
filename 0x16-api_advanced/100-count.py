@@ -29,7 +29,7 @@ def count_words(sub, word_list, next="", keys={}, page=0):
         keys[words] = 0 if words not in keys else keys[words]
         for titles in out:
             if words.lower() in titles.lower().split():
-                keys[words] = keys[words] + 1
+                keys[words] += titles.lower().split().count(words)
 
     if out is not None:
         next = data['data']['after']

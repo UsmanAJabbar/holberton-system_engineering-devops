@@ -2,7 +2,7 @@
 """Returns a list of titles... this time, recursively"""
 
 
-def count_words(sub, word_list, next="", keys={}):
+def count_words(sub, word_list, next="", keys={}, page=0):
     """
     -------------------
     METHOD: count_words
@@ -24,18 +24,18 @@ def count_words(sub, word_list, next="", keys={}):
            if data.get('data') and data['data'].get('children')
            is not None else None)
 
+    print(page)
     # Create a dictionary storing the amount of times a specifc keyword was found in out
     for words in word_list:
         keys[words] = 0 if words not in keys else keys[words]
         for titles in out:
-            if words in titles.split():
-                for splitted_words in titles.split():
-                    keys[words] = keys[words] + 1
+            if words.lower() in titles.lower().split():
+                keys[words] = keys[words] + 1
 
     if out is not None:
         next = data['data']['after']
         if next is not None:
-            return count_words(sub, word_list, next, keys)
+            return count_words(sub, word_list, next, keys, page=page+1)
         else:
             if keys == {}:
                 print()

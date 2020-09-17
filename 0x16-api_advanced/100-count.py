@@ -38,6 +38,6 @@ def count_words(sub, word_list, next="", keys={}, page=0):
         else:
             if keys == {}:
                 print()
-            for k, v in sorted(keys.items(), reverse=False):
+            for k, v in sorted(keys.items(), key=lambda p: p[1], reverse=True):
                 if v != 0:
                     print(k + ":", v)

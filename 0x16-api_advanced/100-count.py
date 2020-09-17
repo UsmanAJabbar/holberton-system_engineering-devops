@@ -34,8 +34,12 @@ def count_words(sub, word_list, next="", keys={}):
 
     if out is not None:
         next = data['data']['after']
+
+        # If we aren't at the last page of the API, continue
         if next is not None:
             return count_words(sub, word_list, next, keys)
+
+        # Alright, we're at the end, print the mines...
         else:
             if keys == {}:
                 print()

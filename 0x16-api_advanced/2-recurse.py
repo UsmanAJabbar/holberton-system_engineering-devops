@@ -2,7 +2,7 @@
 """Returns a list of titles... this time, recursively"""
 
 
-def recurse(subreddit, hot_list=[], next=""):
+def recurse(sub, hot=[], next=""):
     """
     ---------------
     METHOD: recurse
@@ -18,10 +18,7 @@ def recurse(subreddit, hot_list=[], next=""):
     """
     from requests import get as r_get
 
-    # Shortening names since PEP8's crap
-    sub, hot = subreddit, hot_list
-
-    url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(sub,next)
+    url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(sub, next)
     data = r_get(url, allow_redirects=False, headers={'User-agent': ''}).json()
     out = ([title['data']['title'] for title in data['data']['children'][:]]
            if data.get('data') and data['data'].get('children')

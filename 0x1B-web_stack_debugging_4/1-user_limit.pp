@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Increases the number of files holberton as a user could handle
 exec { 'fix_hardlimit':
   path    => ['/usr/bin/', '/bin/'],
